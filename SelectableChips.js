@@ -9,7 +9,7 @@ class SelectableChips extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedChips:[],
+            selectedChips:(props.selectedChips) ? props.selectedChips : [],
             isFocused: false,
             chips: (props.initialChips) ? props.initialChips : []
         }
