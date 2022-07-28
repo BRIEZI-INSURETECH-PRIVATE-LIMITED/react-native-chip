@@ -91,7 +91,7 @@ class RemovableChips extends React.Component {
 const styles = StyleSheet.create({
     textInput: {
         height: 40,
-        fontSize: 20,
+        fontSize: 14,
         padding: 10,
         color: '#000',
         
