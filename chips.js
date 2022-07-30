@@ -6,7 +6,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
 
 const Chips = (props) => {
-    const { value, onPress, chipStyle,type,selected,chipCloseStyle,valueStyleSelected,chipStyleSelected,valueStyle} = props;
+    const { value, onPress, chipStyle,type,selected,chipCloseStyle,valueStyleSelected,chipStyleSelected,valueStyle,disabled=false} = props;
     const returnStyles=()=>{
         if(type=='removable'){
             return removableStyles
@@ -22,7 +22,7 @@ const Chips = (props) => {
         }       
     }
     return (
-        <TouchableOpacity  onPress={onPress}>
+        <TouchableOpacity  onPress={onPress} disabled={disabled}>
             <View style={selected?[{flexDirection:'row'},returnStyles().chipSelected, chipStyle,chipStyleSelected]:[{flexDirection:'row'},returnStyles().chip, chipStyle]}>
                 <Text style={selected?[{ paddingHorizontal: 5 },returnStyles().valueStyleSelected,valueStyle,valueStyleSelected]:[{ paddingHorizontal: 5 },returnStyles().valueStyle,valueStyle]}>{value}</Text>
                 {returnRemovable()}
