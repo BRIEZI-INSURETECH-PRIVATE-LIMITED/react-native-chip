@@ -50,7 +50,7 @@ class SelectableChips extends React.Component {
     }
     render() {
         
-        const { chipStyle,valueStyle,valueStyleSelected,chipStyleSelected} = this.props;
+        const { chipStyle,valueStyle,valueStyleSelected,chipStyleSelected,disabled=false} = this.props;
         
         const chips = this.state.chips.map((item,index) => (
             <Chips
@@ -62,6 +62,7 @@ class SelectableChips extends React.Component {
                 chipStyleSelected={chipStyleSelected}
                 onPress={() => this.selectChip(item)} 
                 type='selectable'
+                disabled={disabled}
                 selected={this.isSelected(item)}/>
         ));
         return (
